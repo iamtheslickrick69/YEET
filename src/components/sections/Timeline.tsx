@@ -105,9 +105,11 @@ export function Timeline() {
         >
           <p className="text-sm uppercase tracking-widest text-white/40 mb-4">How We Work</p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white max-w-2xl">
-            From kickoff to production
-            <span className="text-white/40"> in weeks, not months.</span>
+            Our Process
           </h2>
+          <p className="text-lg md:text-xl text-white/60 max-w-2xl mt-4">
+            From kickoff to production in weeks, not months.
+          </p>
         </motion.div>
 
         {/* Timeline */}
