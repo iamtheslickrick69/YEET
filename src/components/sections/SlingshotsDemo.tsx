@@ -1,22 +1,14 @@
 "use client"
 
-import { useState } from "react"
-import { GradientBackground, colorTemplates, type GradientColors } from "@/components/gradient-background"
-import { ColorPickerWidget } from "@/components/color-picker-widget"
+import { GradientBackground, colorTemplates } from "@/components/gradient-background"
 import { Rajdhani } from "next/font/google"
 
 const rajdhani = Rajdhani({ subsets: ["latin"], weight: ["400", "600"], display: "swap" })
 
 export function SlingshotsDemo() {
-  const [activeColors, setActiveColors] = useState<GradientColors>(colorTemplates[22].colors)
-  const [currentFont, setCurrentFont] = useState("Rajdhani")
-  const [headingText, setHeadingText] = useState("The age of AI is the rematch\nbetween David and Goliath.")
-  const [subheadingText, setSubheadingText] = useState("and we're crafting slingshots.")
-
-  const handleTextChange = (heading: string, subheading: string) => {
-    setHeadingText(heading)
-    setSubheadingText(subheading)
-  }
+  const activeColors = colorTemplates[22].colors
+  const headingText = "The age of AI is the rematch\nbetween David and Goliath."
+  const subheadingText = "and we're crafting slingshots."
 
   return (
     <section id="slingshots" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
@@ -27,19 +19,6 @@ export function SlingshotsDemo() {
 
       {/* Dark overlay for better contrast */}
       <div className="absolute inset-0 bg-black/20" style={{ zIndex: 1 }} />
-
-      {/* Color Picker Widget */}
-      <div style={{ zIndex: 50 }} className="relative">
-        <ColorPickerWidget
-          onColorChange={setActiveColors}
-          currentColors={activeColors}
-          onFontChange={setCurrentFont}
-          currentFont={currentFont}
-          onTextChange={handleTextChange}
-          headingText={headingText}
-          subheadingText={subheadingText}
-        />
-      </div>
 
       {/* Main Content - matching original slingshots page */}
       <div className="px-6 max-w-4xl relative" style={{ zIndex: 10 }}>
